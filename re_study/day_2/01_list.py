@@ -1,6 +1,8 @@
 # 定义列表
 my_list = ["test", True, 1]
 print(my_list)
+test = []
+print(test)
 
 # 定义嵌套列表
 my_list = [[1, 2, 3], [1, 2, 3]]
