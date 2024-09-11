@@ -253,7 +253,7 @@ Python 编程语言中有四种集合数据类型：
 
 #### 检查项目是否存在
 
-* 如需确定列表中是否存在指定的项，请使用 in 关键字：
+* 如需确定列表中是否存在指定的项，使用 in 关键字：
 
 > - 实例:检查列表中是否存在 “apple”：
 > ```python
@@ -264,19 +264,134 @@ Python 编程语言中有四种集合数据类型：
 > # Yes, 'apple' is in the fruits list
 > ```
 
+#### 列表长度
 
- 
+* 如需确定列表中有多少项，使用 len()方法：
 
+> - 实例:打印列表中的项目数:
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> print(len(thislist)) # 3
+> ```
 
+#### 添加项目
 
- 
+* 如需将项目添加到列表的末尾，使用 append() 方法：
 
+> - 实例:使用 append() 方法追加项目:
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> thislist.append("orange")
+> print(thislist) # ['apple', 'banana', 'cherry', 'orange']
+> ```
 
+* 如需在指定的索引处添加项目，使用 insert() 方法：
 
- 
+> - 实例:插入项目作为第二个位置：
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> thislist.insert(1, "orange")
+> print(thislist) # ['apple', 'orange', 'banana', 'cherry']
+> ```
 
+#### 删除项目
 
+* 删除指定项目
 
- 
+> - 实例:用remove() 方法删除指定的项目：
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> thislist.remove("banana")
+> print(thislist)
+> ```
 
+* 删除指定的索引
 
+> - 实例:用 pop() 方法删除指定的索引（如果未指定索引，则删除最后一项）：
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> thislist.pop()
+> print(thislist) # ['apple', 'banana']
+> ```
+
+* 删除指定的索引
+
+> - 实例:用 del 关键字删除指定的索引：
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> del thislist[0]
+> print(thislist) # ['banana', 'cherry']
+> ```
+> - 用 del 关键字删除完整的列表
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> del thislist
+> ```
+> - 同样的,用clear()方法清空列表:
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> thislist.clear()
+> print(thislist)
+> ```
+
+#### 复制列表
+
+* 只能通过键入 list2 = list1 来复制列表，因为：list2 将只是对 list1 的引用，list1 中所做的更改也将自动在 list2 中进行。
+* 有一些方法可以进行复制，一种方法是使用内置的 List 方法 copy()。
+
+> - 实例:使用 copy() 方法来复制列表:
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> mylist = thislist.copy()
+> print(mylist)
+> ```
+
+* 制作副本的另一种方法是使用内建的方法 list()。
+
+> - 实例:使用 list() 方法复制列表:
+> ```python
+> thislist = ["apple", "banana", "cherry"]
+> mylist = list(thislist)
+> print(mylist)
+> ```
+
+#### 合并两个列表
+
+* 在 Python 中，有几种方法可以连接或串联两个或多个列表。
+* 最简单的方法之一是使用 + 运算符。
+
+> - 实例:合并两个列表:
+> ```python
+> list1 = ["a", "b" , "c"]
+> list2 = [1, 2, 3]
+> 
+> list3 = list1 + list2
+> print(list3) # ['a', 'b', 'c', 1, 2, 3]
+> ```
+
+* 使用 extend() 方法，将一个列表中的元素添加到另一列表中：
+
+> - 实例:使用 extend() 方法将 list2 添加到 list1 的末尾：
+> ```python
+> list1 = ["a", "b" , "c"]
+> list2 = [1, 2, 3]
+> 
+> list1.extend(list2)
+> print(list1)
+> ```
+
+## 列表方法
+
+| 方法        | 描述                         |
+|-----------|----------------------------|
+| append()	 | 在列表的末尾添加一个元素               |
+| clear()	  | 删除列表中的所有元素                 |
+| copy()	   | 返回列表的副本                    |
+| count()	  | 返回具有指定值的元素数量。              |
+| extend()	 | 将列表元素（或任何可迭代的元素）添加到当前列表的末尾 |
+| index()	  | 返回具有指定值的第一个元素的索引           |
+| insert()	 | 在指定位置添加元素                  |
+| pop()	    | 删除指定位置的元素                  |
+| remove()	 | 删除具有指定值的项目                 |
+| reverse() | 	颠倒列表的顺序                   |
+| sort()	   | 对列表进行排序                    |
